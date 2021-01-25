@@ -1,0 +1,861 @@
+/** *** You can say something about your file if you need it
+* Template Name
+* Description
+* Version
+* Copyright
+* Author
+* Last Modified Date
+**/
+
+
+/*--------------------------*/
+/* $Catalog
+/*--------------------------*/
+
+/**
+* Global
+* Elements
+* Header
+* About
+* Quote
+* Skill
+* Experience
+* Work
+* Contact
+* Footer
+* Parallax graphic
+**/
+
+/*--------------------------*/
+/* $Global
+/*--------------------------*/
+
+/*--------------------------*/
+/* $Elements (會重複使用的元件)
+/*--------------------------*/
+
+/* Backgroud */
+.bg{
+	/*定位在整個螢幕畫面的最下方,撐滿整個螢幕,
+	不論頁面怎麼滾動都會看到下方的那張背景圖*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/urban-long-exposure-night.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.bg:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(60deg,#4e4f95,#c87db4);
+	opacity: 0.6;
+}
+
+/* lean-bg */
+.lean-bg--top:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 180px;
+	background-color: #fefefe;
+	top: 0;
+	transform: skewY(-5deg) translateY(-50%);
+}
+.lean-bg--bottom:after{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 180px;
+	background-color: #fefefe;
+	bottom: 0;
+	transform: skewY(-5deg) translateY(50%);
+}
+@media (max-width: 768px){
+	.lean-bg--top:before,
+	.lean-bg--bottom:after{
+		height: 80px;
+	}
+}
+.lean-bg--top{
+	margin-top: 160px;
+}
+.lean-bg--bottom{
+	margin-bottom: 160px;
+}
+@media (max-width: 768px){
+	.lean-bg--top{
+		margin-top: 80px;
+	}
+	.lean-bg--bottom{
+		margin-bottom: 80px;
+	}
+}
+.lean-bg--no-margin{
+	margin: 0;
+}
+
+/* Normal Button*/
+.btn{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin: 0;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 16px;
+	min-width: 64px;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	letter-spacing: 0;
+	text-decoration: none;
+	background-color: #d1d2d3;
+	border: 0;
+	border-radius: 18px;
+	outline: 0;
+	cursor: pointer;
+	overflow: hidden;
+	user-select: none;
+	user-drag: none;
+	transition: all 0.3s;
+}
+.btn--primary,
+.btn--secondary{
+	color: #fefefe;
+}
+.btn--primary{
+	background-color: #e881a7;
+}
+.btn--primary:hover,
+.btn--primary:active{
+	background-color: #dd6488;
+	color: #fefefe;
+}
+.btn--secondary{
+	background-color: inherit;
+	border: 1px solid #e881a7;
+	color: #e881a7;
+}
+.btn--secondary:hover,
+.btn--secondary:active{
+	background-color: #dd6488;
+	color: #fefefe;
+}
+.btn.btn--lg{
+	font-size: 20px;
+	height: 56px;
+	line-height: 56px;
+	font-weight: 400;
+	border-radius: 28px;
+	padding: 0 64px;
+}
+.btn.btn--md{
+	font-size: 18px;
+	height: 48px;
+	line-height: 48px;
+	font-weight: 400;
+	border-radius: 24px;
+	padding: 0 64px;
+}
+.btn.btn--sm{
+	font-size: 14px;
+	height: 32px;
+	line-height: 32px;
+	font-weight: 400;
+	border-radius: 16px;
+	padding: 0 32px;
+}
+.btn-group .btn{
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+/* Icon Button*/
+.icon-btn{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;	
+	font-size: 32px;
+}
+.icon-btn .icon{
+	display: block;
+	text-align: center;
+	line-height: 32px;
+	transition: all 0.3s;
+}
+.icon-btn .icon:hover{
+	transform: translateY(-20%);
+}
+
+/* Text Button */
+.text-btn{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-weight: 400;	
+	letter-spacing: 0;
+	text-decoration: none;
+	color: #484848;
+}
+.text-btn.text-btn--primary{
+	color: #e881a7;
+}
+.text-btn.text-btn--lg{
+	font-size: 20px;
+	line-height: 48px;
+	height: 48px;
+	font-weight: 900;
+}
+.text-btn.text-btn--lg:before{
+	content: "";
+	position: absolute;
+	bottom: 0; 
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background-color: #e881a7;
+	transition: all 0.3s;
+}
+.text-btn.text-btn--lg:hover:before{
+	width: 100%;
+}
+
+/* Image */
+.imgbox{
+	width: 100%;
+	overflow: hidden;
+}
+.imbox__inner{
+	width: 100%;
+	padding-top: 100%;
+	position: relative;
+}
+.imbox__inner.imbox__inner--4-3{
+	padding-top: calc(100% / 4 * 3);
+}
+.imbox__inner .image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+/*--------------------------*/
+/* $Header
+/*--------------------------*/
+.header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	transition: all 0.3s;
+}
+.header--colored{
+	background-color: #fefefe;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+.header--colored .menu-toggle span{
+	background-color: #e881a7;
+}
+.header--colored .navbar__social-bar .icon{
+	color: #e881a7;
+}
+
+/* Navbar */
+.navbar{
+	/*border: 1px solid #fff;*/
+}
+.navbar--collapse{
+	margin-right: -16px;	
+	margin-left: -16px;
+	/*因為格線系統margin的關係,
+	導覽列的內容沒有和下方hero的文字對齊故而設定*/
+}
+.navbar__social-bar{
+	padding: 24px;
+	/*border: 1px solid #fff;*/
+	display: block;	
+	float: left;
+}
+@media(max-width: 768px){
+	.navbar__social-bar{
+		padding: 12px;
+	}
+}
+.navbar__social-bar .icon-btn{
+	color: #fefefe;
+}
+
+/* Menu-toggle */
+.navbar__nav{
+	float: right;
+}
+.menu-toggle{	
+	display: block;
+	padding: 24px;
+	padding-top: 26px;
+	/*border: 1px solid #fff;*/
+}
+@media (max-width: 768px){
+	.menu-toggle{
+		padding: 12px;
+		padding-top: 16px;
+	}
+}
+.menu-toggle span{
+	display: block;
+	width: 32px;
+	height: 2px;
+	background-color: #fefefe;
+	margin-bottom: 8px;
+	transition: all 0.3s;
+}
+.menu-toggle:hover span:nth-child(1){
+	transform: translateX(-20%);
+}
+.menu-toggle:hover span:nth-child(3){
+	transform: translateX(20%);
+}
+
+/* Popup-menu */
+.popup-menu{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fefefe;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	/*一開始彈跳式選單不出現*/
+	transition: all 0.3s;
+}
+.popup-menu:target{
+	opacity: 1;
+	visibility: visible;
+	/*當彈跳式選單被點擊之後才會出現*/
+}
+.popup-menu__close{
+	/*設定同menu-toggle*/
+	display: block;
+	padding: 24px;
+	width: 80px;
+	height: 80px;
+	float: right;
+	transition: all 0.3s;
+	margin-right: -16px;
+	/*因為navbar--collapse的關係而調整*/
+}
+@media (max-width: 768px){
+	.popup-menu__close{
+		padding: 12px;
+		width: 56px;
+		height: 56px;
+	}
+}
+.popup-menu__close:hover{
+	transform: rotate(180deg);
+}
+.popup-menu__close span{
+	display: block;
+	width: 32px;
+	height: 2px;
+	background-color: #e881a7;
+	position: absolute;
+	top: 50%;
+	left: 50%;	
+}
+.popup-menu__close span:nth-child(1){
+	transform: translate(-50%,-50%) rotate(45deg);
+	/*根據popup-menu__close的外框置中再旋轉45度就可以變成一個叉叉*/
+}
+.popup-menu__close span:nth-child(2){
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+.popup-menu__item{
+	display: block;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 900;
+	color: #484848;
+	line-height: 80px;
+	transition: all 0.3s;
+}
+@media (max-width: 768px){
+	.popup-menu__item{
+		font-size: 24px;
+		line-height: 48px;
+	}
+}
+.popup-menu__item:hover{
+	color: #e881a7;
+}
+
+/*--------------------------*/
+/* $About
+/*--------------------------*/
+.hero{
+	/*border: 1px solid #fff;*/
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}
+@media (max-width: 480px){
+	.hero{
+		padding-top: 80px;
+		padding-bottom: 80px;
+		/*原本是根據螢幕畫面的拉大拉小,
+		但是換到小裝置不希望再亂動而設定定值內距*/
+	}
+}
+.hero__heading{
+	font-size: 120px;
+	font-weight: 900;
+	color: #fefefe
+}
+@media (max-width: 768px){
+	.hero__heading{
+		font-size: 48px;
+	}
+}
+.hero__bg{
+	/*border: 1px solid red;*/
+	position: absolute;
+	top: 80px;
+	/*剛好放在header下方*/
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/portrait.png);
+	background-repeat: no-repeat;
+	background-size: 400px;
+	background-position: top right;
+	max-width: 1140px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@media (max-width: 768px){
+	.hero__bg{
+		background-size: 320px;
+	}
+}
+@media (max-width: 480px){
+	.hero__bg{
+		background-size: 200px;
+	}
+}
+
+/*--------------------------*/
+/* $Quote
+/*--------------------------*/
+.quote{
+	background-color: #fefefe;
+	padding-top: 80px;
+	padding-bottom: 60px;
+}
+@media (max-width: 768px){
+	.quote{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		/*希望在小螢幕能夠距離靠近一點,讓內距縮小*/
+	}
+}
+.quote__icon{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #e881a7;
+	text-align: center;
+	line-height: 64px;
+	font-size: 32px;
+	color: #fefefe;
+	margin: 0 auto;
+	margin-bottom: 24px;
+}
+.quote__text,
+.quote__name{
+	font-size: 18px;
+	line-height: 32px;
+	color: #484848;
+	text-align: center;
+	margin-bottom: 24px;
+}
+.quote__name span{
+	color: #e881a7;
+}
+
+/*--------------------------*/
+/* $Skill
+/*--------------------------*/
+.skill{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+@media (max-width: 768px){
+	.skill{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		/*希望在小螢幕能夠距離靠近一點,讓內距縮小*/
+	}
+}
+.skill-group{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.skill-card{
+	/*border: 1px solid #000;*/
+	padding-left: 32px;
+	margin-bottom: 32px;
+}
+.skill-card__inner{
+	background-color: #fefefe;
+	border-radius: 4px;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	padding: 24px;
+	padding-left: 48px;
+}
+.skill-card__title{
+	color: #e881a7;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+.skill-card__text{
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+.skill-card__icon{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #f3f4f5;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	position: absolute;
+	top: 50%;
+	left: 0;
+    transform: translateY(-50%);
+}
+.skill-card__icon img{
+	max-width: 60%;
+    max-height: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media (max-width: 768px){
+	.skill-card__icon{
+		top: 0;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.skill-card{
+		padding: 0;
+		margin-bottom: 56px;
+	}
+	.skill-card__inner{
+		padding-top: 48px;
+	}
+	.skill-group{
+		padding-bottom: 30px;
+	}
+}
+
+/*--------------------------*/
+/* $Experience
+/*--------------------------*/
+.experience{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+@media (max-width: 768px){
+	.experience{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		/*希望在小螢幕能夠距離靠近一點,讓內距縮小*/
+	}
+}
+
+/* Timeline */
+.timeline-group{
+	/*border: 1px solid #000;*/
+	max-width: 960px;	
+	/*height: 800px;*/
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 120px;
+}
+.timeline{
+	width: 4px;
+	height: 100%;
+	background-color: #e881a7;
+	position: absolute;
+	left:50%;
+	transform: translateX(-50%);
+	top: 0; 
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+.timeline-cards__row:nth-child(odd){
+	display: flex;
+	justify-content: flex-start;
+}
+.timeline-cards__row:nth-child(even){
+	display: flex;
+	justify-content: flex-end;
+}
+.timeline-card{
+	padding: 24px;
+	background-color: #fefefe;
+	border-radius: 4px;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	width: calc(50% - 24px);
+}
+.timeline-card:before{
+	content: "";
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: #e881a7;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+	position: absolute;
+	top: 50%;
+	right: -24px;
+	transform: translate(50%,-50%);
+}
+.timeline-cards__row:nth-child(odd) > :before{
+	right: -24px;
+	transform: translate(50%,-50%);
+}
+.timeline-cards__row:nth-child(even) > :before{
+	left: -24px;
+	transform: translate(-50%,-50%);
+}
+@media (max-width: 768px){
+	.timeline{
+		left: 0;
+	}
+	.timeline-card{
+		width: calc(100% - 24px);
+		margin-bottom: 24px;
+	}
+	.timeline-cards__row:last-child .timeline-card{
+		margin-bottom: 0;
+	}
+	.timeline-cards__row:nth-child(odd){
+		justify-content: flex-end;
+	}
+	.timeline-cards__row:nth-child(odd) > :before{
+		left: -24px;
+		transform: translate(-50%,-50%);
+	}
+}
+.timeline-card__text{
+	margin: 0;
+}
+
+/*--------------------------*/
+/* $Work
+/*--------------------------*/
+.work{
+	padding-top: 80px;
+	padding-bottom: 120px;
+}
+@media (max-width: 768px){
+	.work{
+		padding-top: 30px;
+		padding-bottom: 80px;
+		/*希望在小螢幕能夠距離靠近一點,讓內距縮小*/
+	}
+}
+
+/* Work-list*/
+.work-list{
+	padding-top: 80px;
+}
+.work-item{
+	margin-bottom: 160px;
+}
+.work-item__text{
+	padding-top: 36px;
+}
+.work-item__text--right{
+	text-align: right;
+}
+.work-item__title{
+	font-size: 36px;
+	font-weight: 900;
+  	font-family: "Helvetica", "Noto Sans TC", "Roboto", "Arial", sans-serif;
+	color: #484848;
+}
+.work-item__title--right{
+	margin-right: -80px;
+}
+.work-item__title--left{
+	margin-left: -80px;
+}
+.work-item__intro{
+	font-size: 16px;
+	line-height: 32px;
+}
+@media (max-width: 768px){
+	.work-item{
+		margin-bottom: 48px;
+	}
+	.work-item__text--right,
+	.work-item__text--left{
+		text-align: center;
+	}
+	.work-item__title--right{
+		margin-right: 0;
+	}
+	.work-item__title--left{
+		margin-left: 0;
+	}
+	.work-item__title{
+		font-size: 28px;
+		line-height: 32px;
+		margin-top: 0;
+		margin-bottom: 8px;
+	}
+}
+
+/*--------------------------*/
+/* $Contact
+/*--------------------------*/
+.contact{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+@media (max-width: 768px){
+	.contact{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		/*希望在小螢幕能夠距離靠近一點,讓內距縮小*/
+	}
+}
+
+/* Form */
+.form{
+	max-width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.form input[type="text"],
+.form input[type="tel"],
+.form input[type="email"],
+.form textarea{
+	padding: 8px 16px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #cdcdcd;
+	border-radius: 4px;
+	box-sizing: border-box;
+	width: 100%; 
+	margin-bottom: 20px;
+	background-color: inherit;
+	color: #fefefe;
+}
+.form textarea{
+	resize: none;
+}
+.form input[type="text"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="email"]:focus,
+.form textarea:focus{
+	outline: 0;
+	border: 1px solid #e881a7;
+}
+.form label{
+	margin-bottom: 8px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #fefefe;
+	font-size: 17px;
+}
+.form__btn-group{
+	margin-top: 32px;
+}
+
+/* Divide-text */
+.divide-text{
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	color: #fefefe;
+	font-size: 28px;
+	line-height: 32px;
+}
+
+/* Info */
+.info{
+	text-align: center;
+}
+.info__email{
+	margin-bottom: 16px;
+}
+.info__email a{
+	color: #e881a7;
+	font-size: 18px;
+	font-weight: 500;
+}
+.info__phone{
+	margin-bottom: 16px;
+}
+.info__phone a{
+	color: #fefefe;
+	font-size: 20px;
+	font-weight: 500;
+}
+.info__social-bar .icon-btn{
+	color: #e881a7;
+}
+
+/*--------------------------*/
+/* $Footer
+/*--------------------------*/
+.footer{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.final-text,
+.copyright{
+	max-width: 600px;
+	text-align: center;
+	color: #fefefe;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*--------------------------*/
+/* $Parallax graphic (視差滾動)
+/*--------------------------*/
+/*只要class前面是graphic_都會被選取到*/
+[class^="graphic_"]{
+	position: absolute;
+}
+@media (max-width: 768px){
+	[class^="graphic_"]{
+		transform: scale(0.5);
+	}
+}
+.graphic_001{top: 20%; left: 5%;}
+.graphic_002{bottom: 0%; left: 2%;}
+.graphic_003{top: -120%; right: 5%;}
+.graphic_006{bottom: 50%; left: -5%;}
